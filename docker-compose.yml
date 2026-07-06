@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  mock-api:
+    image: clue/json-server:latest
+    ports:
+      - "3001:80"
+    volumes:
+      - ./mock-api/data.json:/data/db.json:ro
+    environment:
+      - PORT=80
+    restart: unless-stopped
